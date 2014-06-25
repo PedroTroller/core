@@ -19,7 +19,9 @@ class FileFactory
      */
     public function createFile($name = null, $content = null)
     {
-        return (new File)
+        $file = new File;
+
+        return $file
             ->setName($name)
             ->setContent($content)
         ;
