@@ -11,3 +11,11 @@ before_script:
 
 script:
   - ./bin/phpspec run -fpretty --verbose
+
+notifications:
+    webhooks:
+        urls:
+            - "https://webhooks.gitter.im/e/14326d2d9d5a01ee8ebf"
+        on_success: change
+        on_failure: always
+        on_start: false
