@@ -2,127 +2,88 @@
 
 namespace Gaufrette\Core;
 
-use Gaufrette\Core\FileInterface;
-
-/**
- * A file abstraction
- *
- * @Package Gaufrette
- */
-class File implements FileInterface
+interface File
 {
     /**
-     * @var string $name
+     * Clone the File withe same name and same data
+     *
+     * @return File
      */
-    private $name;
+    public function __clone();
 
     /**
-     * @var string $content
+     * Create a new File instance with a new name but keep original data
+     *
+     * @param string $name
+     *
+     * @return File
      */
-    private $content;
-
-    /**
-     * @var string $siez
-     */
-    private $size;
-
-    /**
-     * @var string $checksum
-     */
-    private $checksum;
-
-    /**
-     * @var array $metadata
-     */
-    private $metadata;
+    public function duplicate($name);
 
     /**
      * @return string
      */
-    public function getName()
-    {
-        return $this->name;
-    }
+    public function getName();
 
     /**
-     * {@inheritdoc}
+     * @return string
      */
-    public function setName($name)
-    {
-        $this->name = $name;
-
-        return $this;
-    }
+    public function getContent();
 
     /**
-     * {@inheritdoc}
+     * @param string $content
+     *
+     * @return File
      */
-    public function getContent()
-    {
-        return $this->content;
-    }
+    public function setContent($content);
 
     /**
-     * {@inheritdoc}
+     * @return string
      */
-    public function setContent($content)
-    {
-        $this->content = $content;
-
-        return $this;
-    }
+    public function getSize();
 
     /**
-     * {@inheritdoc}
+     * @param string $size
+     *
+     * @return File
      */
-    public function getSize()
-    {
-        return $this->size;
-    }
+    public function setSize($size);
 
     /**
-     * {@inheritdoc}
+     * @return string
      */
-    public function setSize($size)
-    {
-        $this->size = $size;
-
-        return $this;
-    }
+    public function getChecksum();
 
     /**
-     * {@inheritdoc}
+     * @param string $checksum
+     *
+     * @return File
      */
-    public function getChecksum()
-    {
-        return $this->checksum;
-    }
+    public function setChecksum($checksum);
 
     /**
-     * {@inheritdoc}
+     * @return string
      */
-    public function setChecksum($checksum)
-    {
-        $this->checksum = $checksum;
-
-        return $this;
-    }
+    public function getMimeType();
 
     /**
-     * {@inheritdoc}
+     * @param string $mimetype
+     *
+     * @return File
      */
-    public function setMetadata($key, $content)
-    {
-        $this->metadata[$key] = $content;
-
-        return $this;
-    }
+    public function setMimeType($mimetype);
 
     /**
-     * {@inheritdoc}
+     * @param string|null $key
+     *
+     * @return string|array<string>
      */
-    public function getMetadata($key)
-    {
-        return array_key_exists($key, $this->metadata) ? $this->metadata[$key] : array();
-    }
+    public function getMetadata($key = null);
+
+    /**
+     * @param array<string> $metadata
+     *
+     * @return File
+     */
+    public function setMetadata(array $metadata);
 }
