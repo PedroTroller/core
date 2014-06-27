@@ -16,12 +16,6 @@
             "homepage": "http://github.com/Gaufrette/core/contributors"
         }
     ],
-    "repositories": [
-        {
-            "type": "pear",
-            "url": "http://pear.php.net"
-        }
-    ],
     "require": {
         "php": ">=5.3.2"
     },
