@@ -2,8 +2,8 @@
 
 namespace Gaufrette\Core;
 
-use Gaufrette\Core\File;
 use Gaufrette\Core\FileFactory;
+use Gaufrette\Core\FileInterface;
 
 /**
  * A filesystem abstraction
@@ -27,6 +27,11 @@ class Filesystem
         $this->fileFactory = $fileFactory;
     }
 
+    public function createStream($key)
+    {
+        return $this->adapter->createStream($key);
+    }
+
     /**
      * @param string $name
      *
@@ -38,21 +43,21 @@ class Filesystem
     }
 
     /**
-     * @param File $file
+     * @param FileInterface $file
      *
      * @return Filesystem
      */
-    public function save(File $file)
+    public function save(FileInterface $file)
     {
         return $this;
     }
 
     /**
-     * @param File $file
+     * @param FileInterface $file
      *
      * @return Filesystem
      */
-    public function delete(File $file)
+    public function delete(FileInterface $file)
     {
         return $this;
     }

@@ -2,12 +2,14 @@
 
 namespace Gaufrette\Core;
 
+use Gaufrette\Core\FileInterface;
+
 /**
  * A file abstraction
  *
  * @Package Gaufrette
  */
-class File
+class File implements FileInterface
 {
     /**
      * @var string $name
@@ -43,9 +45,7 @@ class File
     }
 
     /**
-     * @param string $name
-     *
-     * @return File
+     * {@inheritdoc}
      */
     public function setName($name)
     {
@@ -55,7 +55,7 @@ class File
     }
 
     /**
-     * @return string
+     * {@inheritdoc}
      */
     public function getContent()
     {
@@ -63,9 +63,7 @@ class File
     }
 
     /**
-     * @param string $content
-     *
-     * @return File
+     * {@inheritdoc}
      */
     public function setContent($content)
     {
@@ -75,7 +73,7 @@ class File
     }
 
     /**
-     * @return string
+     * {@inheritdoc}
      */
     public function getSize()
     {
@@ -83,9 +81,7 @@ class File
     }
 
     /**
-     * @param string $size
-     *
-     * @return File
+     * {@inheritdoc}
      */
     public function setSize($size)
     {
@@ -95,7 +91,7 @@ class File
     }
 
     /**
-     * @return string
+     * {@inheritdoc}
      */
     public function getChecksum()
     {
@@ -103,9 +99,7 @@ class File
     }
 
     /**
-     * @param string $checksum
-     *
-     * @return File
+     * {@inheritdoc}
      */
     public function setChecksum($checksum)
     {
@@ -115,12 +109,9 @@ class File
     }
 
     /**
-     * @param string $key
-     * @param array  $content
-     *
-     * @return File
+     * {@inheritdoc}
      */
-    public function setMetadata($key, array $content)
+    public function setMetadata($key, $content)
     {
         $this->metadata[$key] = $content;
 
@@ -128,9 +119,7 @@ class File
     }
 
     /**
-     * @param string $key
-     *
-     * @return array
+     * {@inheritdoc}
      */
     public function getMetadata($key)
     {
