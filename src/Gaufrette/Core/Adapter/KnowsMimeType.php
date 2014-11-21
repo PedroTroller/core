@@ -10,12 +10,4 @@ interface KnowsMimeType
      * @return string
      */
     public function readMimeType($key);
-
-    /**
-     * @param string $key
-     * @param string $mime
-     *
-     * @return KnowMimeType
-     */
-    public function writeMimeType($key, $mime);
 }
