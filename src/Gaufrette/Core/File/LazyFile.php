@@ -5,7 +5,12 @@ namespace Gaufrette\Core\File;
 use Gaufrette\Core\File as FileInterface;
 use Gaufrette\Core\Filesystem;
 
-class LazyFile implements FileInterface
+/**
+ * Build a new file instance with lazy loading
+ *
+ * @Package Gaufrette
+ */
+final class LazyFile implements FileInterface
 {
     /**
      * @var FileInterface $file
@@ -22,6 +27,12 @@ class LazyFile implements FileInterface
      */
     private $hydrated;
 
+    /**
+     * @param FileInterface $file
+     * @param Filesystem $filesystem
+     *
+     * @return void
+     */
     public function __construct(FileInterface $file, Filesystem $filesystem)
     {
         $this->file       = $file;
@@ -155,6 +166,11 @@ class LazyFile implements FileInterface
         return $this->file->getMetadata($key);
     }
 
+    /**
+     * Get the file from the filesystem. Skip if only hydrated.
+     *
+     * @return void
+     */
     protected function hydrate()
     {
         if (true === $this->hydrated) {

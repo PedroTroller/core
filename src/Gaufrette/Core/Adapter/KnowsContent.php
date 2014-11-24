@@ -2,6 +2,11 @@
 
 namespace Gaufrette\Core\Adapter;
 
+/**
+ * This element can get/set a content from a key
+ *
+ * @Package Gaufrette
+ */
 interface KnowsContent
 {
     /**

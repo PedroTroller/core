@@ -9,7 +9,7 @@ use Gaufrette\Core\File as FileInterface;
  *
  * @Package Gaufrette
  */
-class File implements FileInterface
+final class File implements FileInterface
 {
     /**
      * @var string $name
@@ -173,6 +173,11 @@ class File implements FileInterface
             return $this->metadata;
         }
 
-        return array_key_exists($key, $this->metadata) ? $this->metadata[$key] : array();
+        if (false === array_key_exists($key, $this->metadata)) {
+
+            return array();
+        }
+
+        return $this->metadata[$key];
     }
 }

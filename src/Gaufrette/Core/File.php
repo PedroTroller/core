@@ -76,7 +76,7 @@ interface File
     /**
      * @param string|null $key
      *
-     * @return string|array<string>
+     * @return string|string[]
      */
     public function getMetadata($key = null);
 
