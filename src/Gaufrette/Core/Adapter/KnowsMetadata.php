@@ -15,7 +15,7 @@ interface KnowsMetadata
      * @param string $key
      * @param array $metadata
      *
-     * @return KnowMetadata
+     * @return KnowsMetadata
      */
     public function writeMetadata($key, array $metadata);
 }

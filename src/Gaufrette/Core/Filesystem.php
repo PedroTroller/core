@@ -117,14 +117,6 @@ class Filesystem
             $this->adapter->writeMetadata($file->getName(), $file->getMetadata());
         }
 
-        if ($this->adapter instanceof KnowsMimeType) {
-            $this->adapter->writeMimeType($file->getName(), $file->getMimeType());
-        }
-
-        if ($this->adapter instanceof KnowsSize) {
-            $this->adapter->writeSize($file->getName(), $file->getSize());
-        }
-
         return $this;
     }
 
