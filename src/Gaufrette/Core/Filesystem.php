@@ -6,6 +6,7 @@ use Gaufrette\Core\Adapter;
 use Gaufrette\Core\Adapter\CanListKeys;
 use Gaufrette\Core\Adapter\CanUseFile;
 use Gaufrette\Core\Adapter\KnowsChecksum;
+use Gaufrette\Core\Adapter\KnowsContent;
 use Gaufrette\Core\Adapter\KnowsMetadata;
 use Gaufrette\Core\Adapter\KnowsMimeType;
 use Gaufrette\Core\Adapter\KnowsSize;
@@ -69,7 +70,11 @@ class Filesystem
             return $this->adapter->get($file);
         }
 
-        $file->setContent($this->adapter->read($file->getName()));
+        if ($this->adapter instanceof KnowsContent) {
+            $file->setContent(
+                $this->adapter->readContent($file->getName())
+            );
+        }
 
         if ($this->adapter instanceof KnowsChecksum) {
             $file->setChecksum(
@@ -111,7 +116,9 @@ class Filesystem
             return $this;
         }
 
-        $this->adapter->write($file->getName(), $file->getContent());
+        if ($this->adapter instanceof KnowsContent) {
+            $this->adapter->writeContent($file->getName(), $file->getContent());
+        }
 
         if ($this->adapter instanceof KnowsMetadata) {
             $this->adapter->writeMetadata($file->getName(), $file->getMetadata());
