@@ -12,16 +12,17 @@ class FilesystemSpec extends ObjectBehavior
 {
     function let(FileFactory $factory, Adapter $adapter, File $file)
     {
-        $this->beConstructedWith($adapter, $factory);
-
         $factory->createFile('key')->willReturn($file);
 
         $file->getName()->willReturn('key');
         $file->setContent(Argument::any())->willReturn($file);
         $file->getContent()->willReturn('file-content');
 
-        $adapter->read('key')->willReturn('adapter-content');
+        $adapter->implement('Gaufrette\Core\Adapter\KnowsContent');
+        $adapter->readContent('key')->willReturn('adapter-content');
         $adapter->exists('key')->willReturn(true);
+
+        $this->beConstructedWith($adapter, $factory);
     }
 
     function it_is_initializable()
@@ -41,7 +42,7 @@ class FilesystemSpec extends ObjectBehavior
 
     function it_sets_content_of_the_file_from_adapter(Adapter $adapter, File $file)
     {
-        $adapter->read('key')->shouldBeCalled();
+        $adapter->readContent('key')->shouldBeCalled();
         $file->setContent('adapter-content')->shouldBeCalled();
 
         $this->get($file);
@@ -49,7 +50,7 @@ class FilesystemSpec extends ObjectBehavior
 
     function it_saves_file_content_from_file(Adapter $adapter, File $file)
     {
-        $adapter->write('key', 'file-content')->shouldBeCalled();
+        $adapter->writeContent('key', 'file-content')->shouldBeCalled();
         $file->getContent()->shouldBeCalled();
 
         $this->save($file);
