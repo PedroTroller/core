@@ -69,16 +69,6 @@ final class LazyFile implements FileInterface
     /**
      * {@inheritdoc}
      */
-    public function setContent($content)
-    {
-        $this->file->setContent($content);
-
-        return $this;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
     public function getContent()
     {
         $this->hydrate();
@@ -89,9 +79,10 @@ final class LazyFile implements FileInterface
     /**
      * {@inheritdoc}
      */
-    public function setSize($size)
+    public function setContent($content)
     {
-        $this->file->setSize($size);
+        $this->hydrate();
+        $this->file->setContent($content);
 
         return $this;
     }
@@ -109,9 +100,10 @@ final class LazyFile implements FileInterface
     /**
      * {@inheritdoc}
      */
-    public function setChecksum($checksum)
+    public function setSize($size)
     {
-        $this->file->setChecksum($checksum);
+        $this->hydrate();
+        $this->file->setSize($size);
 
         return $this;
     }
@@ -129,6 +121,17 @@ final class LazyFile implements FileInterface
     /**
      * {@inheritdoc}
      */
+    public function setChecksum($checksum)
+    {
+        $this->hydrate();
+        $this->file->setChecksum($checksum);
+
+        return $this;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function getMimeType()
     {
         $this->hydrate();
@@ -141,17 +144,8 @@ final class LazyFile implements FileInterface
      */
     public function setMimeType($mimetype)
     {
+        $this->hydrate();
         $this->file->setMimeType($mimetype);
-
-        return $this;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function setMetadata(array $metadata)
-    {
-        $this->file->setMetadata($metadata);
 
         return $this;
     }
@@ -164,6 +158,59 @@ final class LazyFile implements FileInterface
         $this->hydrate();
 
         return $this->file->getMetadata($key);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function setMetadata(array $metadata)
+    {
+        $this->hydrate();
+        $this->file->setMetadata($metadata);
+
+        return $this;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getLastAccess()
+    {
+        $this->hydrate();
+
+        return $this->file->getLastAccess();
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function setLastAccess(\DateTime $lastAccess)
+    {
+        $this->hydrate();
+        $this->file->setLastAccess($lastAccess);
+
+        return $this;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getLastModification()
+    {
+        $this->hydrate();
+
+        return $this->file->getLastModification();
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function setLastModification(\DateTime $lastModification)
+    {
+        $this->hydrate();
+        $this->file->setLastModification($lastModification);
+
+        return $this;
     }
 
     /**

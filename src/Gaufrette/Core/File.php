@@ -81,9 +81,33 @@ interface File
     public function getMetadata($key = null);
 
     /**
-     * @param array<string> $metadata
+     * @param string[] $metadata
      *
      * @return File
      */
     public function setMetadata(array $metadata);
+
+    /**
+     * @return \DateTime
+     */
+    public function getLastAccess();
+
+    /**
+     * @param \DateTime $lastAccess
+     *
+     * @return File
+     */
+    public function setLastAccess(\DateTime $lastAccess);
+
+    /**
+     * @return \DateTime
+     */
+    public function getLastModification();
+
+    /**
+     * @param \DateTime $lastModification
+     *
+     * @return File
+     */
+    public function setLastModification(\DateTime $lastModification);
 }
