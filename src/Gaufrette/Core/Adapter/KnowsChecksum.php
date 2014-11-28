@@ -2,6 +2,11 @@
 
 namespace Gaufrette\Core\Adapter;
 
+/**
+ * This element can retrieve a checksum from a key
+ *
+ * @Package Gaufrette
+ */
 interface KnowsChecksum
 {
     /**

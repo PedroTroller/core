@@ -2,17 +2,15 @@
 
 namespace Gaufrette\Core;
 
-use Gaufrette\Core\FileInterface;
-
 /**
- * Interface for the filesystem adapters
+ * Interface a the filesystem adapters
  */
 interface Adapter
 {
     /**
      * Deletes the key
      *
-     * @param key
+     * @param string $key
      *
      * @return Adapter
      */
@@ -22,7 +20,6 @@ interface Adapter
      * Test if key exists
      *
      * @param string $key
-     * @param string $content
      *
      * @return boolean
      */
