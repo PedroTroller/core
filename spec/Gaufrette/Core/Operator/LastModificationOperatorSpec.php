@@ -12,7 +12,7 @@ class LastModificationOperatorSpec extends ObjectBehavior
 {
     function let(KnowsLastModification $adapter, Adapter $other, File $file)
     {
-        $date = new \DateTime('2015-01-01');
+        $date = new \DateTime('2015-01-01', new \DateTimeZone("Europe/Paris"));
 
         $adapter->implement('Gaufrette\Core\Adapter');
         $adapter->readLastModification('file.png')->willReturn(1234566000);
@@ -38,7 +38,7 @@ class LastModificationOperatorSpec extends ObjectBehavior
 
     function it_sets_last_access($adapter, $file)
     {
-        $file->setLastModification(new \DateTime('2009-02-14'))->shouldBeCalled();
+        $file->setLastModification(new \DateTime('2009-02-14', new \DateTimeZone("Europe/Paris")))->shouldBeCalled();
 
         $this->load($file, $adapter)->shouldReturn($this);
     }
