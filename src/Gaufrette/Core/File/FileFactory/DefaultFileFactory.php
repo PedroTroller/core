@@ -7,8 +7,6 @@ use Gaufrette\Core\File\FileFactory;
 
 /**
  * Build a new file instance
- *
- * @Package Gaufrette
  */
 final class DefaultFileFactory implements FileFactory
 {

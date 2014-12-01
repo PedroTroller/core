@@ -38,13 +38,13 @@ class ContentOperatorSpec extends ObjectBehavior
     {
         $file->setContent('the adapter content')->shouldBeCalled();
 
-        $this->load($file, $adapter)->shouldHaveType('Gaufrette\Core\Operator\ContentOperator');
+        $this->load($file, $adapter);
     }
 
     function it_gets_content(KnowsContent $adapter, File $file)
     {
         $adapter->writeContent('file.png', 'the file content')->shouldBeCalled();
 
-        $this->save($file, $adapter)->shouldHaveType('Gaufrette\Core\Operator\ContentOperator');
+        $this->save($file, $adapter);
     }
 }

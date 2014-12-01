@@ -23,7 +23,5 @@ final class ChecksumOperator implements CanLoad
     public function load(File $file, Adapter $adapter)
     {
         $file->setChecksum($adapter->readChecksum($file->getName()));
-
-        return $this;
     }
 }

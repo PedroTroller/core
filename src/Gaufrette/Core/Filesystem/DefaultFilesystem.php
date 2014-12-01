@@ -13,8 +13,6 @@ use Gaufrette\Core\Operator\CanSave;
 
 /**
  * A filesystem abstraction
- *
- * @Package Gaufrette
  */
 class DefaultFilesystem implements Filesystem
 {
@@ -36,8 +34,6 @@ class DefaultFilesystem implements Filesystem
     /**
      * @param Adapter $adapter
      * @param FileFactory $factory
-     *
-     * @return void
      */
     public function __construct(Adapter $adapter, FileFactory $factory)
     {

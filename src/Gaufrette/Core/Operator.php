@@ -5,6 +5,9 @@ namespace Gaufrette\Core;
 use Gaufrette\Core\Adapter;
 use Gaufrette\Core\File;
 
+/**
+ * Can tranfert data from adapter to file instance or reverse way
+ */
 interface Operator
 {
     /**

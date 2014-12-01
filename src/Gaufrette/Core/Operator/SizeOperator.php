@@ -23,7 +23,5 @@ final class SizeOperator implements CanLoad
     public function load(File $file, Adapter $adapter)
     {
         $file->setSize($adapter->readSize($file->getName()));
-
-        return $this;
     }
 }

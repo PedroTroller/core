@@ -24,8 +24,6 @@ final class ContentOperator implements CanLoad, CanSave
     public function load(File $file, Adapter $adapter)
     {
         $file->setContent($adapter->readContent($file->getName()));
-
-        return $this;
     }
 
     /**
@@ -34,7 +32,5 @@ final class ContentOperator implements CanLoad, CanSave
     public function save(File $file, Adapter $adapter)
     {
         $adapter->writeContent($file->getName(), $file->getContent());
-
-        return $this;
     }
 }

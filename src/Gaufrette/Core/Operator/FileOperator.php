@@ -24,8 +24,6 @@ final class FileOperator implements CanLoad, CanSave
     public function load(File $file, Adapter $adapter)
     {
         $adapter->get($file);
-
-        return $this;
     }
 
     /**
@@ -34,7 +32,5 @@ final class FileOperator implements CanLoad, CanSave
     public function save(File $file, Adapter $adapter)
     {
         $adapter->save($file);
-
-        return $this;
     }
 }

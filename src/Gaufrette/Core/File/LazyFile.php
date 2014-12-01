@@ -7,8 +7,6 @@ use Gaufrette\Core\Filesystem;
 
 /**
  * Build a new file instance with lazy loading
- *
- * @Package Gaufrette
  */
 final class LazyFile implements FileInterface
 {
@@ -30,8 +28,6 @@ final class LazyFile implements FileInterface
     /**
      * @param FileInterface $file
      * @param Filesystem $filesystem
-     *
-     * @return void
      */
     public function __construct(FileInterface $file, Filesystem $filesystem)
     {
@@ -169,9 +165,9 @@ final class LazyFile implements FileInterface
     /**
      * Get the file from the filesystem. Skip if only hydrated.
      *
-     * @return void
+     * @return
      */
-    protected function hydrate()
+    private function hydrate()
     {
         if (true === $this->hydrated) {
 

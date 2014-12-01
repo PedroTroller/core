@@ -37,6 +37,6 @@ class MimeTypeOperatorSpec extends ObjectBehavior
     {
         $file->setMimeType('text/plain')->shouldBeCalled();
 
-        $this->load($file, $adapter)->shouldHaveType('Gaufrette\Core\Operator\MimeTypeOperator');
+        $this->load($file, $adapter);
     }
 }
