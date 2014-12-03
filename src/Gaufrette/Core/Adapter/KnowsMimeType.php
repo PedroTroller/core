@@ -5,7 +5,7 @@ namespace Gaufrette\Core\Adapter;
 use Gaufrette\Core\Adapter\Behavior;
 
 /**
- * This element can get a mimetype from a key
+ * This part of adapter can get a mimetype from a key
  */
 interface KnowsMimeType extends Behavior
 {

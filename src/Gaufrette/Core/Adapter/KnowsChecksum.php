@@ -5,7 +5,7 @@ namespace Gaufrette\Core\Adapter;
 use Gaufrette\Core\Adapter\Behavior;
 
 /**
- * This element can retrieve a checksum from a key
+ * This part of adapter can retrieve a checksum from a key
  */
 interface KnowsChecksum extends Behavior
 {

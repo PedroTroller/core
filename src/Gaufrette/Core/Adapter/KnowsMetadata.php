@@ -5,7 +5,7 @@ namespace Gaufrette\Core\Adapter;
 use Gaufrette\Core\Adapter\Behavior;
 
 /**
- * This element can get/set metadata from a key
+ * This part of adapter can get/set metadata from a key
  */
 interface KnowsMetadata extends Behavior
 {

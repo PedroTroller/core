@@ -5,7 +5,7 @@ namespace Gaufrette\Core\Adapter;
 use Gaufrette\Core\Adapter\Behavior;
 
 /**
- * This element can get a size from a key
+ * This part of adapter can get a size from a key
  */
 interface KnowsSize extends Behavior
 {

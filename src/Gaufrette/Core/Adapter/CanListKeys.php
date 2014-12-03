@@ -5,7 +5,7 @@ namespace Gaufrette\Core\Adapter;
 use Gaufrette\Core\Adapter\Behavior;
 
 /**
- * This element can list keys of it's data (ex: name of files)
+ * This part of adapter can list keys of it's data (ex: name of files)
  */
 interface CanListKeys extends Behavior
 {

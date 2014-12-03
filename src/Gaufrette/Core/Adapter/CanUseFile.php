@@ -6,7 +6,7 @@ use Gaufrette\Core\Adapter\Behavior;
 use Gaufrette\Core\File;
 
 /**
- * This element can use an instance of Gaufrette\Core\File directly
+ * This part of adapter can use an instance of Gaufrette\Core\File directly
  */
 interface CanUseFile extends Behavior
 {
