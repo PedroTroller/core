@@ -40,6 +40,16 @@ final class File implements FileInterface
     private $metadata;
 
     /**
+     * @var \DateTime $lastAccess
+     */
+    private $lastAccess;
+
+    /**
+     * @var \DateTime $lastModification
+     */
+    private $lastModification;
+
+    /**
      * @param string $name
      */
     public function __construct($name)
@@ -67,6 +77,14 @@ final class File implements FileInterface
         $clone->setMetadata($this->metadata);
         $clone->setMimeType($this->mimetype);
         $clone->setSize($this->size);
+
+        if (null !== $this->lastAccess) {
+            $clone->setLastAccess($this->lastAccess);
+        }
+
+        if (null !== $this->lastModification) {
+            $clone->setLastModification($this->lastModification);
+        }
 
         return $clone;
     }
@@ -177,5 +195,41 @@ final class File implements FileInterface
         }
 
         return $this->metadata[$key];
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getLastAccess()
+    {
+        return $this->lastAccess;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function setLastAccess(\DateTime $lastAccess)
+    {
+        $this->lastAccess = $lastAccess;
+
+        return $this;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getLastModification()
+    {
+        return $this->lastModification;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function setLastModification(\DateTime $lastModification)
+    {
+        $this->lastModification = $lastModification;
+
+        return $this;
     }
 }
