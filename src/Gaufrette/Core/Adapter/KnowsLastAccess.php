@@ -2,10 +2,12 @@
 
 namespace Gaufrette\Core\Adapter;
 
+use Gaufrette\Core\Adapter\Behavior;
+
 /**
  * This part of adapter can get/set last access time from a key
  */
-interface KnowsLastAccess
+interface KnowsLastAccess extends Behavior
 {
     /**
      * @param string $key

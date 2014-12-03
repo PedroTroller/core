@@ -2,10 +2,12 @@
 
 namespace Gaufrette\Core\Adapter;
 
+use Gaufrette\Core\Adapter\Behavior;
+
 /**
- * This part of adapter can retrieve a checksum from a key
+ * This element can retrieve a checksum from a key
  */
-interface KnowsChecksum
+interface KnowsChecksum extends Behavior
 {
     /**
      * @param string $key
