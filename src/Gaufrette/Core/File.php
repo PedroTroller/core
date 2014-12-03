@@ -2,6 +2,9 @@
 
 namespace Gaufrette\Core;
 
+/**
+ * A file object representation
+ */
 interface File
 {
     /**

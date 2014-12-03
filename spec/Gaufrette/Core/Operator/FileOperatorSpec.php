@@ -36,13 +36,13 @@ class FileOperatorSpec extends ObjectBehavior
     {
         $adapter->get($file)->shouldBeCalled();
 
-        $this->load($file, $adapter)->shouldHaveType('Gaufrette\Core\Operator\FileOperator');
+        $this->load($file, $adapter);
     }
 
     function it_gets_file(CanUseFile $adapter, File $file)
     {
         $adapter->save($file)->shouldBeCalled();
 
-        $this->save($file, $adapter)->shouldHaveType('Gaufrette\Core\Operator\FileOperator');
+        $this->save($file, $adapter);
     }
 }

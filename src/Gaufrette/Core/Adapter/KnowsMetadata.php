@@ -3,9 +3,7 @@
 namespace Gaufrette\Core\Adapter;
 
 /**
- * This element can get/set metadata from a key
- *
- * @Package Gaufrette
+ * This part of adapter can get/set metadata from a key
  */
 interface KnowsMetadata
 {

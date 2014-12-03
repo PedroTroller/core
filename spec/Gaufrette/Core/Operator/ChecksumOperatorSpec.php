@@ -37,6 +37,6 @@ class ChecksumOperatorSpec extends ObjectBehavior
     {
         $file->setChecksum('thechecksum')->shouldBeCalled();
 
-        $this->load($file, $adapter)->shouldHaveType('Gaufrette\Core\Operator\ChecksumOperator');
+        $this->load($file, $adapter);
     }
 }

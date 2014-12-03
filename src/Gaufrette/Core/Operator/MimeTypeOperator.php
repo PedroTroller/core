@@ -23,7 +23,5 @@ final class MimeTypeOperator implements CanLoad
     public function load(File $file, Adapter $adapter)
     {
         $file->setMimeType($adapter->readMimeType($file->getName()));
-
-        return $this;
     }
 }

@@ -7,8 +7,6 @@ use Gaufrette\Core\Operator;
 
 /**
  * A filesystem abstraction
- *
- * @Package Gaufrette
  */
 interface Filesystem
 {

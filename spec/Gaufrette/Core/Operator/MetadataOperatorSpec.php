@@ -38,13 +38,13 @@ class MetadataOperatorSpec extends ObjectBehavior
     {
         $file->setMetadata(array('adapter' => true))->shouldBeCalled();
 
-        $this->load($file, $adapter)->shouldHaveType('Gaufrette\Core\Operator\MetadataOperator');
+        $this->load($file, $adapter);
     }
 
     function it_writes_metadata(KnowsMetadata $adapter, File $file)
     {
         $adapter->writeMetadata('file.png', array('file' => true))->shouldBeCalled();
 
-        $this->save($file, $adapter)->shouldHaveType('Gaufrette\Core\Operator\MetadataOperator');
+        $this->save($file, $adapter);
     }
 }

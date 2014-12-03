@@ -24,8 +24,6 @@ final class MetadataOperator implements CanLoad, CanSave
     public function load(File $file, Adapter $adapter)
     {
         $file->setMetadata($adapter->readMetadata($file->getName()));
-
-        return $this;
     }
 
     /**
@@ -34,7 +32,5 @@ final class MetadataOperator implements CanLoad, CanSave
     public function save(File $file, Adapter $adapter)
     {
         $adapter->writeMetadata($file->getName(), $file->getMetadata());
-
-        return $this;
     }
 }

@@ -6,8 +6,6 @@ use Gaufrette\Core\File as FileInterface;
 
 /**
  * A file abstraction
- *
- * @Package Gaufrette
  */
 final class File implements FileInterface
 {

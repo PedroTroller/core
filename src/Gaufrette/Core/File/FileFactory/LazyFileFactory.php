@@ -9,8 +9,6 @@ use Gaufrette\Core\Filesystem;
 
 /**
  * Build a new lazy file instance
- *
- * @Package Gaufrette
  */
 final class LazyFileFactory implements FileFactory
 {
@@ -21,8 +19,6 @@ final class LazyFileFactory implements FileFactory
 
     /**
      * @param Filesystem $filesystem
-     *
-     * @return void
      */
     public function __construct(Filesystem $filesystem)
     {

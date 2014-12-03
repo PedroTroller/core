@@ -37,6 +37,6 @@ class SizeOperatorSpec extends ObjectBehavior
     {
         $file->setSize(1234567890)->shouldBeCalled();
 
-        $this->load($file, $adapter)->shouldHaveType('Gaufrette\Core\Operator\SizeOperator');
+        $this->load($file, $adapter);
     }
 }

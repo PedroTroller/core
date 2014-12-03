@@ -3,9 +3,7 @@
 namespace Gaufrette\Core\Adapter;
 
 /**
- * This element can list keys of it's data (ex: name of files)
- *
- * @Package Gaufrette
+ * This part of adapter can list keys of it's data (ex: name of files)
  */
 interface CanListKeys
 {

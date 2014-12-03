@@ -3,16 +3,14 @@
 namespace Gaufrette\Core\Adapter;
 
 /**
- * This element can get a size from a key
- *
- * @Package Gaufrette
+ * This part of adapter can get a size from a key
  */
 interface KnowsSize
 {
     /**
      * @param string $key
      *
-     * @return int|string
+     * @return int
      */
     public function readSize($key);
 }

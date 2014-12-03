@@ -5,9 +5,7 @@ namespace Gaufrette\Core\Adapter;
 use Gaufrette\Core\File;
 
 /**
- * This element can use an instance of Gaufrette\Core\File directly
- *
- * @Package Gaufrette
+ * This part of adapter can use an instance of Gaufrette\Core\File directly
  */
 interface CanUseFile
 {
