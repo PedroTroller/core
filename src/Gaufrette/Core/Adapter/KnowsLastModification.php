@@ -3,9 +3,7 @@
 namespace Gaufrette\Core\Adapter;
 
 /**
- * This element can get/set last modification time from a key
- *
- * @Package Gaufrette
+ * This part of adapter can get/set last modification time from a key
  */
 interface KnowsLastModification
 {
