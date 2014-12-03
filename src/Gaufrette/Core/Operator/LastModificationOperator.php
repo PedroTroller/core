@@ -3,19 +3,19 @@
 namespace Gaufrette\Core\Operator;
 
 use Gaufrette\Core\Adapter;
-use Gaufrette\Core\Adapter\KnowsLastModification;
 use Gaufrette\Core\File;
+use Gaufrette\Core\Operator\AbstractOperator;
 use Gaufrette\Core\Operator\CanLoad;
 use Gaufrette\Core\Operator\CanSave;
 
-final class LastModificationOperator implements CanLoad, CanSave
+final class LastModificationOperator extends AbstractOperator implements CanLoad, CanSave
 {
     /**
      * {@inheritdoc}
      */
     public function supports(File $file, Adapter $adapter)
     {
-        return $adapter instanceof KnowsLastModification;
+        return $this->adapterHasBehavior($adapter, 'Gaufrette\Core\Adapter\KnowsLastModification');
     }
 
     /**

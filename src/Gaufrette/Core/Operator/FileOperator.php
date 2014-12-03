@@ -3,19 +3,19 @@
 namespace Gaufrette\Core\Operator;
 
 use Gaufrette\Core\Adapter;
-use Gaufrette\Core\Adapter\CanUseFile;
 use Gaufrette\Core\File;
+use Gaufrette\Core\Operator\AbstractOperator;
 use Gaufrette\Core\Operator\CanLoad;
 use Gaufrette\Core\Operator\CanSave;
 
-final class FileOperator implements CanLoad, CanSave
+final class FileOperator extends AbstractOperator implements CanLoad, CanSave
 {
     /**
      * {@inheritdoc}
      */
     public function supports(File $file, Adapter $adapter)
     {
-        return $adapter instanceof CanUseFile;
+        return $this->adapterHasBehavior($adapter, 'Gaufrette\Core\Adapter\CanUseFile');
     }
 
     /**

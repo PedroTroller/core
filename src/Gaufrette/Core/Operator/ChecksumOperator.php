@@ -3,18 +3,18 @@
 namespace Gaufrette\Core\Operator;
 
 use Gaufrette\Core\Adapter;
-use Gaufrette\Core\Adapter\KnowsChecksum;
 use Gaufrette\Core\File;
+use Gaufrette\Core\Operator\AbstractOperator;
 use Gaufrette\Core\Operator\CanLoad;
 
-final class ChecksumOperator implements CanLoad
+final class ChecksumOperator extends AbstractOperator implements CanLoad
 {
     /**
      * {@inheritdoc}
      */
     public function supports(File $file, Adapter $adapter)
     {
-        return $adapter instanceof KnowsChecksum;
+        return $this->adapterHasBehavior($adapter, 'Gaufrette\Core\Adapter\KnowsChecksum');
     }
 
     /**
