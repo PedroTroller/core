@@ -3,18 +3,18 @@
 namespace Gaufrette\Core\Operator;
 
 use Gaufrette\Core\Adapter;
-use Gaufrette\Core\Adapter\KnowsMimeType;
 use Gaufrette\Core\File;
+use Gaufrette\Core\Operator\AbstractOperator;
 use Gaufrette\Core\Operator\CanLoad;
 
-final class MimeTypeOperator implements CanLoad
+final class MimeTypeOperator extends AbstractOperator implements CanLoad
 {
     /**
      * {@inheritdoc}
      */
     public function supports(File $file, Adapter $adapter)
     {
-        return $adapter instanceof KnowsMimeType;
+        return $this->adapterHasBehavior($adapter, 'Gaufrette\Core\Adapter\KnowsMimeType');
     }
 
     /**
