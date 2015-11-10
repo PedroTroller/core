@@ -5,47 +5,47 @@ namespace Gaufrette\Core\File;
 use Gaufrette\Core\File as FileInterface;
 
 /**
- * A file abstraction
+ * A file abstraction.
  */
 final class File implements FileInterface
 {
     /**
-     * @var string $name
+     * @var string
      */
     private $name;
 
     /**
-     * @var string $content
+     * @var string
      */
     private $content;
 
     /**
-     * @var string $size
+     * @var string
      */
     private $size;
 
     /**
-     * @var string $checksum
+     * @var string
      */
     private $checksum;
 
     /**
-     * @var string $mimetype
+     * @var string
      */
     private $mimetype;
 
     /**
-     * @var array $metadata
+     * @var array
      */
     private $metadata;
 
     /**
-     * @var \DateTime $lastAccess
+     * @var \DateTime
      */
     private $lastAccess;
 
     /**
-     * @var \DateTime $lastModification
+     * @var \DateTime
      */
     private $lastModification;
 
@@ -185,12 +185,10 @@ final class File implements FileInterface
     public function getMetadata($key = null)
     {
         if (null === $key) {
-
             return $this->metadata;
         }
 
         if (false === array_key_exists($key, $this->metadata)) {
-
             return array();
         }
 

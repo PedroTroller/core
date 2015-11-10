@@ -8,12 +8,12 @@ use Gaufrette\Core\File\LazyFile;
 use Gaufrette\Core\Filesystem;
 
 /**
- * Build a new lazy file instance
+ * Build a new lazy file instance.
  */
 final class LazyFileFactory implements FileFactory
 {
     /**
-     * @var Filesystem $filesystem
+     * @var Filesystem
      */
     private $filesystem;
 

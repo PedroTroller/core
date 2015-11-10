@@ -3,7 +3,7 @@
 namespace Gaufrette\Core\File;
 
 /**
- * Build a new file instance
+ * Build a new file instance.
  */
 interface FileFactory
 {

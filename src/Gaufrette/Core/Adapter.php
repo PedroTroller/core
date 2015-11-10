@@ -3,12 +3,12 @@
 namespace Gaufrette\Core;
 
 /**
- * Interface a the filesystem adapters
+ * Interface a the filesystem adapters.
  */
 interface Adapter
 {
     /**
-     * Deletes the key
+     * Deletes the key.
      *
      * @param string $key
      *
@@ -17,11 +17,11 @@ interface Adapter
     public function delete($key);
 
     /**
-     * Test if key exists
+     * Test if key exists.
      *
      * @param string $key
      *
-     * @return boolean
+     * @return bool
      */
     public function exists($key);
 }
