@@ -4,9 +4,6 @@ namespace Gaufrette\Core\Operator;
 
 use Gaufrette\Core\Adapter;
 use Gaufrette\Core\File;
-use Gaufrette\Core\Operator\AbstractOperator;
-use Gaufrette\Core\Operator\CanLoad;
-use Gaufrette\Core\Operator\CanSave;
 
 final class ContentOperator extends AbstractOperator implements CanLoad, CanSave
 {

@@ -6,40 +6,41 @@ use Gaufrette\Core\Adapter;
 use Gaufrette\Core\Adapter\CanListKeys;
 use Gaufrette\Core\File;
 use Gaufrette\Core\File\FileFactory;
+use Gaufrette\Core\File\FileFactory\LazyFileFactory;
 use Gaufrette\Core\Filesystem;
 use Gaufrette\Core\Operator;
 use Gaufrette\Core\Operator\CanLoad;
 use Gaufrette\Core\Operator\CanSave;
 
 /**
- * A filesystem abstraction
+ * A filesystem abstraction.
  */
 class DefaultFilesystem implements Filesystem
 {
     /**
-     * @var FileFactory $factory
+     * @var FileFactory
      */
     private $factory;
 
     /**
-     * @var Adapter $adapter
+     * @var Adapter
      */
     private $adapter;
 
     /**
-     * @var Operator[] $operators
+     * @var Operator[]
      */
     private $operators;
 
     /**
-     * @param Adapter $adapter
+     * @param Adapter     $adapter
      * @param FileFactory $factory
      */
-    public function __construct(Adapter $adapter, FileFactory $factory)
+    public function __construct(Adapter $adapter, FileFactory $factory = null)
     {
-        $this->adapter   = $adapter;
-        $this->factory   = $factory;
         $this->operators = array();
+        $this->adapter   = $adapter;
+        $this->factory   = null !== $factory ? $factory : new LazyFileFactory($this);
     }
 
     /**
@@ -59,7 +60,7 @@ class DefaultFilesystem implements Filesystem
 
         if ($this->adapter instanceof CanListKeys) {
             foreach ($this->adapter->listKeys($prefix) as $key) {
-                $files[$key] = $this->factory->createLazyFile($key, $this);
+                $files[$key] = $this->factory->create($key, $this);
             }
         }
 
@@ -77,7 +78,6 @@ class DefaultFilesystem implements Filesystem
 
         foreach ($this->operators as $operator) {
             if (false === $operator instanceof CanLoad || false === $operator->supports($file, $this->adapter)) {
-
                 continue;
             }
 
@@ -92,10 +92,8 @@ class DefaultFilesystem implements Filesystem
      */
     public function save(File $file)
     {
-
         foreach ($this->operators as $operator) {
             if (false === $operator instanceof CanSave || false === $operator->supports($file, $this->adapter)) {
-
                 continue;
             }
 

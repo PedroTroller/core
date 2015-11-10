@@ -2,11 +2,8 @@
 
 namespace Gaufrette\Core;
 
-use Gaufrette\Core\File;
-use Gaufrette\Core\Operator;
-
 /**
- * A filesystem abstraction
+ * A filesystem abstraction.
  */
 interface Filesystem
 {
@@ -18,7 +15,7 @@ interface Filesystem
     public function addOperator(Operator $operator);
 
     /**
-     * List files
+     * List files.
      *
      * @param string $prefix
      *
@@ -43,7 +40,7 @@ interface Filesystem
     /**
      * @param File|string $file
      *
-     * @return boolean
+     * @return bool
      */
     public function exists($file);
 

@@ -2,10 +2,8 @@
 
 namespace Gaufrette\Core\Adapter;
 
-use Gaufrette\Core\Adapter\Behavior;
-
 /**
- * This part of adapter can get/set a content from a key
+ * This part of adapter can get/set a content from a key.
  */
 interface KnowsContent extends Behavior
 {

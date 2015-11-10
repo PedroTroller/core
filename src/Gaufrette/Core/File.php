@@ -3,19 +3,19 @@
 namespace Gaufrette\Core;
 
 /**
- * A file object representation
+ * A file object representation.
  */
 interface File
 {
     /**
-     * Clone the File withe same name and same data
+     * Clone the File withe same name and same data.
      *
      * @return File
      */
     public function __clone();
 
     /**
-     * Create a new File instance with a new name but keep original data
+     * Create a new File instance with a new name but keep original data.
      *
      * @param string $name
      *

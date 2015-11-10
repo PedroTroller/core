@@ -8,17 +8,16 @@ use Gaufrette\Core\Adapter\KnowsItsBehaviors;
 class Guesser
 {
     /**
-     * Say if adapter has the given behavior
+     * Say if adapter has the given behavior.
      *
      * @param Adapter $adapter
-     * @param string $behavior
+     * @param string  $behavior
      *
-     * @return boolean
+     * @return bool
      */
     public function adapterHasBehavior(Adapter $adapter, $behavior)
     {
         if ($adapter instanceof KnowsItsBehaviors) {
-
             return in_array($behavior, $adapter->getBehaviors());
         }
 
@@ -26,7 +25,7 @@ class Guesser
     }
 
     /**
-     * Get all behavior of an adapter
+     * Get all behavior of an adapter.
      *
      * @param Adapter $adapter
      *
@@ -35,7 +34,6 @@ class Guesser
     public function allFromAdapter(Adapter $adapter)
     {
         if ($adapter instanceof KnowsItsBehaviors) {
-
             return $adapter->getBehaviors();
         }
 

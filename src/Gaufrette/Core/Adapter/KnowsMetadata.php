@@ -2,10 +2,8 @@
 
 namespace Gaufrette\Core\Adapter;
 
-use Gaufrette\Core\Adapter\Behavior;
-
 /**
- * This part of adapter can get/set metadata from a key
+ * This part of adapter can get/set metadata from a key.
  */
 interface KnowsMetadata extends Behavior
 {
@@ -18,7 +16,7 @@ interface KnowsMetadata extends Behavior
 
     /**
      * @param string $key
-     * @param array $metadata
+     * @param array  $metadata
      *
      * @return KnowsMetadata
      */

@@ -6,7 +6,7 @@ use Gaufrette\Core\File\File;
 use Gaufrette\Core\File\FileFactory;
 
 /**
- * Build a new file instance
+ * Build a new file instance.
  */
 final class DefaultFileFactory implements FileFactory
 {

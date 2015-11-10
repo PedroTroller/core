@@ -6,28 +6,28 @@ use Gaufrette\Core\File as FileInterface;
 use Gaufrette\Core\Filesystem;
 
 /**
- * Build a new file instance with lazy loading
+ * Build a new file instance with lazy loading.
  */
 final class LazyFile implements FileInterface
 {
     /**
-     * @var FileInterface $file
+     * @var FileInterface
      */
     private $file;
 
     /**
-     * @var Filesystem $filesystem
+     * @var Filesystem
      */
     private $filesystem;
 
     /**
-     * @var boolean $hydrated
+     * @var bool
      */
     private $hydrated;
 
     /**
      * @param FileInterface $file
-     * @param Filesystem $filesystem
+     * @param Filesystem    $filesystem
      */
     public function __construct(FileInterface $file, Filesystem $filesystem)
     {
@@ -217,7 +217,6 @@ final class LazyFile implements FileInterface
     private function hydrate()
     {
         if (true === $this->hydrated) {
-
             return;
         }
 

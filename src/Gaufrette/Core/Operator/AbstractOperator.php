@@ -9,20 +9,20 @@ use Gaufrette\Core\Operator;
 abstract class AbstractOperator implements Operator
 {
     /**
-     * @var Guesser $guesser
+     * @var Guesser
      */
     private $guesser;
 
     public function __construct()
     {
-        $this->guesser = new Guesser;
+        $this->guesser = new Guesser();
     }
 
     /**
      * @param Adapter $adapter
-     * @param string $behavior
+     * @param string  $behavior
      *
-     * @return boolean
+     * @return bool
      */
     protected function adapterHasBehavior(Adapter $adapter, $behavior)
     {
