@@ -11,17 +11,17 @@ use Gaufrette\Core\Filesystem;
 final class LazyFile implements FileInterface
 {
     /**
-     * @var FileInterface
+     * @type FileInterface
      */
     private $file;
 
     /**
-     * @var Filesystem
+     * @type Filesystem
      */
     private $filesystem;
 
     /**
-     * @var bool
+     * @type bool
      */
     private $hydrated;
 

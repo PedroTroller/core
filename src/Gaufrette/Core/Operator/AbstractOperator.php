@@ -9,7 +9,7 @@ use Gaufrette\Core\Operator;
 abstract class AbstractOperator implements Operator
 {
     /**
-     * @var Guesser
+     * @type Guesser
      */
     private $guesser;
 
