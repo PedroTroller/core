@@ -10,42 +10,42 @@ use Gaufrette\Core\File as FileInterface;
 final class File implements FileInterface
 {
     /**
-     * @var string
+     * @type string
      */
     private $name;
 
     /**
-     * @var string
+     * @type string
      */
     private $content;
 
     /**
-     * @var string
+     * @type string
      */
     private $size;
 
     /**
-     * @var string
+     * @type string
      */
     private $checksum;
 
     /**
-     * @var string
+     * @type string
      */
     private $mimetype;
 
     /**
-     * @var array
+     * @type array
      */
     private $metadata;
 
     /**
-     * @var \DateTime
+     * @type \DateTime
      */
     private $lastAccess;
 
     /**
-     * @var \DateTime
+     * @type \DateTime
      */
     private $lastModification;
 

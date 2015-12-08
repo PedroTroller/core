@@ -13,7 +13,7 @@ use Gaufrette\Core\Filesystem;
 final class LazyFileFactory implements FileFactory
 {
     /**
-     * @var Filesystem
+     * @type Filesystem
      */
     private $filesystem;
 

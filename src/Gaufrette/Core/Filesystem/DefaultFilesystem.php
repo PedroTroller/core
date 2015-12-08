@@ -18,17 +18,17 @@ use Gaufrette\Core\Operator\CanSave;
 class DefaultFilesystem implements Filesystem
 {
     /**
-     * @var FileFactory
+     * @type FileFactory
      */
     private $factory;
 
     /**
-     * @var Adapter
+     * @type Adapter
      */
     private $adapter;
 
     /**
-     * @var Operator[]
+     * @type Operator[]
      */
     private $operators;
 
